@@ -80,3 +80,5 @@ shellcheck
 gedit
 geany
 texlive-full
+dia
+graphviz
