@@ -57,7 +57,7 @@ ffmpeg
 glances
 default-jdk
 dkms
-linux-headers-amd64
+linux-headers-generic
 hashcat
 inxi
-fastfetch
+neofetch
