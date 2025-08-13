@@ -1,5 +1,6 @@
 ROOTDIR=$(realpath $(dir $(firstword $(MAKEFILE_LIST))))
 PACKAGES_FILE=${ROOTDIR}/ubuntu_packages.txt
+SNAPS_FILE=${ROOTDIR}/snaps.txt
 NOUVEAU_BLACKLIST_FILE=/etc/modprobe.d/blacklist-nouveau.conf
 
 ASDF_DIR= $(HOME)/.asdf
@@ -22,6 +23,9 @@ install_packages:
 	sudo apt update
 	sudo apt upgrade -y
 	sudo xargs -a ${PACKAGES_FILE} apt install -y
+
+install_snaps:
+	sudo xargs -a ${SNAPS_FILE} snap install
 
 nvidia_driver: blacklist_nouveau
 	sudo apt update
