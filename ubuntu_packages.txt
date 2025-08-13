@@ -79,3 +79,4 @@ moreutils
 shellcheck
 gedit
 geany
+texlive-full
