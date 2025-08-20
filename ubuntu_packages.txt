@@ -79,12 +79,12 @@ moreutils
 shellcheck
 gedit
 geany
-texlive-full
-dia
-graphviz
-alien
 geparted
 valgrind
 kcachegrind
 valgrind-mpi
 google-android-platform-tools-installer
+texlive-full
+dia
+graphviz
+alien
