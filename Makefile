@@ -62,4 +62,18 @@ asdf_install_python: asdf_plugins
 	bash -c '. $(ASDF_DIR)/asdf.sh && $(ASDF_BIN)  install python 3.9.18 || true'
 	bash -c '. $(ASDF_DIR)/asdf.sh && $(ASDF_BIN)  global python 3.11.9 || true'
 
+install-uv:
+	@echo "Checking for uv installation..."
+	@if command -v uv >/dev/null 2>&1; then \
+		echo "uv is already installed: $$(uv --version)"; \
+	else \
+		echo "uv not found. Installing via official standalone script..."; \
+		if ! command -v curl >/dev/null 2>&1; then \
+			echo "Error: curl is required to install uv. Please install curl first."; \
+			exit 1; \
+		fi; \
+		curl -LsSf https://astral.sh/uv/install.sh | sh; \
+		echo "uv installed successfully."; \
+		echo "Please run 'source ~/.bashrc' (or your shell's config) or restart your terminal to update your PATH."; \
+	fi
 	
